@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+    <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <mat-toolbar class="menu" role="header" color="accent">
+    <mat-toolbar-row>
+      <button mat-button class="toolbar__icon-button mat-button">
+        <mat-icon>computer</mat-icon>
+        <span style="margin-left: 5px !important;">Node Quiz</span>
+      </button>
+  
+      <div fxFlex></div>
+  
+      <!-- User Profile -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>library_books</mat-icon>
+          <span>My Results</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+      <button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar><br><br><br />
+
+    <form #f="ngForm">
+        Select a Quiz:
+        <select id="mySelect">
+          <option value="RESTful">RESTful APIs</option>
+          <option value="JavaScript">Intro to JavaScript</option>
+          <option value="HTML">HTML & CSS</option>
+        </select>
+      </form>
+      <div class="input">
+          <button type="button" onclick="myFunction()"> Submit </button>
+      </div> 
+      <p id="mySelect"></p>
+      <script>
+          function myFunction() {
+              var x =
+              document.getElementById("mySelect").value;
+
+              document.getElementById("mySelect").innerHTML = x;
+          }
+          </script>
+      
+      <div ng-switch="myVar">
+          <h1>View a Presentation Below</h1><br />
+        <div ng-switch-when="RESTful">
+           <h1>RESTful APIs</h1>
+           <video controls autoplay reload="none" style="width:500px;">
+              <source src="../../assets/presentations/RESTful_API_Presentation.mp4" type="video/mp4" />
+           </video>
+        </div><br />
+
+        <div ng-switch-when="JavaScript">
+           <h1>Introduction to JavaScript</h1><br />
+           <video controls autoplay reload="none" style="width:500px;">
+              <source src="../../assets/presentations/intro_Javascript.mp4" type="video/mp4" />
+           </video>
+        </div><br />
+        <div ng-switch-when="HTML">
+           <h1>HTML & CSS</h1><br />
+           <video controls autoplay reload="none" style="width:500px;">
+              <source src="../../assets/presentations/peterson-htmlCss.mp4" type="video/mp4" />
+           </video>
+        </div><br />
+      </div>
+
+</body>
+</html>

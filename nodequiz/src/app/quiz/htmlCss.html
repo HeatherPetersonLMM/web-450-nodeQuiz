@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+    <body>
+      <style>
+
+        #frame1 {
+          position: fixed;
+          border: 3px solid black;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 2;
+          color:rgb(190, 191, 192);
+        }
+        
+        #center1 {
+          text-align: center;
+          color: black;
+        }
+      </style>
+      
+      <div id = "frame1">
+        <div id = "center1">
+            <h4>HTML & CSS</h4>
+            <hr />
+          <p id= "messages1"></p>
+          <p id= "options1"></p>
+          <p id= "click1"></p>
+          <p id= "comment1"></p>
+        </div>
+      </div>
+
+      <script>
+        var question1 = ["<b>Question 1.  What is the combination of scriptable content, presentation, and behavior called? </b>"];
+        var choices1 = ["<input onclick=correct1() name =button1 type=radio /> Dynamic HTML or DHTML <br /><input onclick=incorrect1() name=button1 type=radio /> JavScript <br /><input onclick=incorrect1() name=button1 type=radio /> CSS <br /><input onclick=incorrect1() name=button1 type=radio /> HTML"]
+      
+        var question2 = ["<b>Question  2.	What are some elements that make up the HTML5 layout? </b>"];
+        var choices2 = ["<input onclick=incorrect2() name =button2 type=radio /> Nav, Middle, End, Aside <br /><input onclick=incorrect2() name=button2 type=radio /> Start, Section, Article, End <br /><input onclick=correct2() name=button2 type=radio /> Nav, Section, Article, Aside <br /><input onclick=incorrect2() name=button2 type=radio /> Header, Article, Title, Footer"]
+
+        var question3 = ["<b>Question 3.	HTML links are created using the _______ element.  </b>"];
+        var choices3 = ["<input onclick=incorrect1() name =button3 type=radio /> &lt; l &gt; <br /><input onclick=correct1() name=button3 type=radio /> &lt; a &gt; <br /><input onclick=incorrect1() name=button3 type=radio /> &lt; hl &gt; <br /><input onclick=incorrect1() name=button3 type=radio /> &lt; b &gt; "]
+
+        var question4 = ["<b>Question 4.	Which HTML element exists within another <u>list</u> element?  </b>"];
+        var choices4 = ["<input onclick=correct1() name =button4 type=radio /> The list element &lt; li &gt; <br /><input onclick=incorrect1() name=button4 type=radio /> The link element &lt; a &gt;<br /><input onclick=incorrect1() name=button4 type=radio /> The unordered list element &lt; ul &gt; <br /><input onclick=incorrect1() name=button4 type=radio /> The ordered list element &lt; ol &gt;"]
+      
+        var question5 = ["<b>Question 5.	Where can you place images in your HTML code? </b>"];
+        var choices5 = ["<input onclick=incorrect1() name =button5 type=radio /> Before a paragraph. <br /><input onclick=incorrect1() name=button5 type=radio /> Inside the start if a paragraph. <br /><input onclick=incorrect1() name=button5 type=radio /> In the middle of a paragraph. <br /><input onclick=correct1() name=button5 type=radio /> All of the above."]
+
+        var question6 = ["<b>Question 6.	What does CSS stand for and what is it used for? </b>"];
+        var choices6 = ["<input onclick=incorrect1() name =button6 type=radio /> Character Style Scripts <br /><input onclick=incorrect1() name=button6 type=radio /> Character Style Sheets <br /><input onclick=incorrect1() name=button6 type=radio /> Cascading Style Scripts <br /><input onclick=correct1() name=button6 type=radio /> Cascading Style Sheets"]
+
+        var question7 = ["<b>Question 7.	What way(s) can color be specified using CSS?  </b>"];
+        var choices7 = ["<input onclick=incorrect1() name =button7 type=radio /> using the color name <br /><input onclick=incorrect1() name=button7 type=radio /> using RGB values <br /><input onclick=incorrect1() name=button7 type=radio /> using Hex codes <br /><input onclick=correct1() name=button7 type=radio /> All of the above. "]
+
+        var question8 = ["<b>Question 8.	What properties can be used to specify background values? </b>"];
+        var choices8 = ["<input onclick=incorrect1() name =button8 type=radio /> background-color <br /><input onclick=incorrect1() name=button8 type=radio /> background-image <br /><input onclick=incorrect1() name=button8 type=radio /> background-position <br /><input onclick=correct1() name=button8 type=radio /> All of the above."]
+
+        var question9 = ["<b>Question 9.	Why are tables important?  </b>"];
+        var choices9 = ["<input onclick=correct1() name =button9 type=radio /> They represent information in a grid format, such as financial reports, TV schedules, and sports results. <br /><input onclick=incorrect1() name=button9 type=radio /> They are the most efficient way to store and organize page content. <br /><input onclick=incorrect1() name=button9 type=radio /> They can be stored in any section of an HTML file. <br /><input onclick=incorrect1() name=button9 type=radio />  There isn't much importance associated with using tables."]
+
+        var question10 = ["<b>Question 10. Every box has three available properties.  In order from outermost to inner, what is the order of appearance? </b>"];
+        var choices10 = ["<input onclick=incorrect1() name =button10 type=radio /> Border, padding, margin <br /><input onclick=correct1() name=button10 type=radio /> Margin, border, padding <br /><input onclick=incorrect1() name=button10 type=radio /> Padding, border, margin <br /><input onclick=incorrect1() name=button10 type=radio /> Padding, margin, border "]
+
+      var a;
+      var b;
+      var c;
+      var d;
+      var e;
+      var f;
+      var g;
+      var h;
+      var i;
+      var j;
+
+        window.onload = function () {
+          messages1.innerHTML = question1;
+          options1.innerHTML = choices1;
+          click1.innerHTML = "<button onclick=set2()>Submit</button>";
+        }
+
+        function correct1() {
+          a = 1;
+        }
+
+        function incorrect1() {
+          a = 0;
+        }
+
+        function set2() {
+          messages1.innerHTML = question2;
+          options1.innerHTML = choices2;
+          click1.innerHTML = "<button onclick=set3()>Submit</button>";
+        }
+
+        function correct1() {
+          b = 1;
+        }
+
+        function incorrect1() {
+          b = 0;
+        }
+
+        function set3() {
+          messages1.innerHTML = question3;
+          options1.innerHTML = choices3;
+          click1.innerHTML = "<button onclick=set4()>Submit</button>";
+        }
+
+        function correct1() {
+          c = 1;
+        }
+
+        function incorrect1() {
+          c = 0;
+        }
+
+        function set4() {
+          messages1.innerHTML = question4;
+          options1.innerHTML = choices4;
+          click1.innerHTML = "<button onclick=set5()>Submit</button>";
+        }
+
+        function correct1() {
+          d = 1;
+        }
+
+        function incorrect1() {
+          d = 0;
+        }
+
+        function set5() {
+          messages1.innerHTML = question5;
+          options1.innerHTML = choices5;
+          click1.innerHTML = "<button onclick=set6()>Submit</button>";
+        }
+
+        function correct1() {
+          e = 1;
+        }
+
+        function incorrect1() {
+          e = 0;
+        }
+
+        function set6() {
+          messages1.innerHTML = question6;
+          options1.innerHTML = choices6;
+          click1.innerHTML = "<button onclick=set7()>Submit</button>";
+        }
+
+        function correct1() {
+          f = 1;
+        }
+
+        function incorrect1() {
+          f = 0;
+        }
+        
+        function set7() {
+          messages1.innerHTML = question7;
+          options1.innerHTML = choices7;
+          click1.innerHTML = "<button onclick=set8()>Submit</button>";
+        }
+
+        function correct1() {
+          g = 1;
+        }
+
+        function incorrect1() {
+          g = 0;
+        }
+
+        function set8() {
+          messages1.innerHTML = question8;
+          options1.innerHTML = choices8;
+          click1.innerHTML = "<button onclick=set9()>Submit</button>";
+        }
+
+        function correct1() {
+          h = 1;
+        }
+
+        function incorrect1() {
+          h = 0;
+        }
+
+        function set9() {
+          messages1.innerHTML = question9;
+          options1.innerHTML = choices9;
+          click1.innerHTML = "<button onclick=set10()>Submit</button>";
+        }
+
+        function correct1() {
+          i = 1;
+        }
+
+        function incorrect1() {
+          i = 0;
+        }
+
+        function set10() {
+          messages1.innerHTML = question10;
+          options1.innerHTML = choices10;
+          click1.innerHTML = "<button onclick=results1()>Submit</button>";
+        }
+
+        function correct1() {
+          j = 1;
+        }
+
+        function incorrect1() {
+          j = 0;
+        }
+      </script>
+    
+      
+
+    </body>
+    </html>

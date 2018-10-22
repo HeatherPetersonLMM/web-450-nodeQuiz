@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    </head>
+    <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <mat-toolbar class="menu" role="header" color="accent">
+    <mat-toolbar-row>
+      <button mat-button class="toolbar__icon-button mat-button">
+        <mat-icon>computer</mat-icon>
+        <span style="margin-left: 5px !important;">Node Quiz</span>
+      </button>
+  
+      <div fxFlex></div>
+  
+      <!-- User Profile -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>library_books</mat-icon>
+          <span>My Results</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+      <button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar><br><br><br />
+  
+<form #f="ngForm" (ngSubmit)="loginUser()">
+  <div class="form">
+  <h1>NodeQuiz</h1>
+  <h3>Please Log-In</h3>
+  <div class="input">
+    <label>Employee ID: </label>
+    <input type="text" name="user" [(ngModel)] = "user" placeholder = "Enter">
+  </div><br />
+
+    <button class="submit-button" (click)="attemptLogin()" 
+    mat-raised-button type="submit">Submit</button>
+
+  </div>
+</form>
+
+</body>
+</html>

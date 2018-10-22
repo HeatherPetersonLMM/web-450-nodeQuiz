@@ -1,0 +1,518 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('api-gateway:server');
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var config = require('../config');
+var port = normalizePort(config.web.port = process.env.PORT || 3000);
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+
+
+/**
+ * Module dependencies.
+ */
+const app = require('../server/app');
+const debug = require('debug')('nodequiz');
+const http = require('http');
+const config = require('../server/helpers/config');
+const logger = require('../server/helpers/logger');
+
+
+/**
+ * Get port from environment and store in Express.
+ */
+let port = normalizePort(config.web.port);
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+let server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+function normalizePort(val) {
+  let port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+      // named pipe
+      return val;
+  }
+
+  if (port >= 0) {
+      // port number
+      return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+function onError(error) {
+  if (error.syscall !== 'listen') {
+      throw error;
+  }
+
+  let bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+  logger.debug('Bind value in www file: ' + bind);
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      logger.debug(bind + ' requires elevated privileges');
+      //console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      logger.debug(bind + ' is already in use');
+      //console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+function onListening() {
+  let addr = server.address();
+  let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  logger.debug('Listening on ' + bind);
+  //debug('Listening on ' + bind);
+}
+
+
+/**
+ * My creation of the NoSQL Data Structure.
+ */
+
+{
+
+"employeeID": 81710,
+
+"employeeName": "Jane" + "Smith",
+
+"quizAttempts": 1,
+
+"quizPass": 1,
+
+"quizFail": 0,
+
+"quizID": 100 [
+  
+    {"questionsID": 101 [
+
+        {"q1": "Why is JavaScript beneficial over other programming languages?"}, {
+
+            q1(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q2": "How can JavaScript be used to define behaviors of documents?"}, {
+
+            q2(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q3": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q3(Select) { 
+              
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q4": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q4(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q5": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q5(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q6": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q6(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q7": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q7(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q8": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q8(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q9": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q9(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+
+{"q10": "Which of the following is not a correct style to apply text comments?"}, {
+
+            q10(Select) { 
+
+              "s1": "Answer for selection one",
+
+              "s2": "Answer for selection two",
+
+              "s3": "Answer for selection three",
+
+              "s4": "Answer for selection four",
+
+}
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q1 = new Select(s1).getQ1();
+        
+        var answer;
+
+             if (q1 == s1) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q2 = new Select(s4).getQ1();
+
+        var answer;
+        
+             if (q2 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q3 == new Select(s4).getQ1();
+
+        var answer;
+
+             if (q3 = s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q4 = new Select(s4).getQ1();
+
+        var answer;
+
+             if (q4 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q5 = new Select(s4).getQ1();
+
+        var answer;
+
+             if (q5 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q6 = new Select(s4).getQ1();
+
+        var answer;
+
+             if (q6 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q7 = new Select(s4).getQ1();
+        
+        var answer;
+
+             if (q7 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q8 = new Select(s4).getQ1();
+
+        var answer;
+
+             if (q8 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q9 = new Select(s4).getQ1();
+
+        var answer;
+
+             if (q9 == s4) {
+
+                 answer = "This is the correct answer.";
+
+            } else {
+
+                 answer = "This is the incorrect answer."
+
+]}
+{"answersID": 102 [
+
+    function userAnswer() {
+
+        var q10 = new Select(s4).getQ1();
+
+        var answer;
+
+             if (q10 == s4) {
+
+                 answer = "This is the correct answer.";
+                 
+            } else {
+                 answer = "This is the incorrect answer."
+
+]}
+}
